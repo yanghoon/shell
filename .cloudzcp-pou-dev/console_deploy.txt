@@ -1,6 +1,0 @@
-2019년 01월 16일 수 오후 7:35:03
-NAME               DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
-nginx-test         1         0         0            0           3d
-zcp-alertmanager   1         0         0            0           30d
-zcp-iam            1         0         0            0           41d
-zcp-portal-ui      1         0         0            0           41d

@@ -1,6 +1,0 @@
-2019년 01월 16일 수 오후 7:23:04
-NAME                                DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
-awesome-media-backend-deployment    1         1         1            1           43d
-awesome-media-frontend-deployment   1         1         1            1           43d
-cloud-movie-java8                   1         1         1            1           8d
-curl                                1         1         1            1           34d
