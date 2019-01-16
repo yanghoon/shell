@@ -28,6 +28,7 @@ Usgae:
 ```
 
 # Examples
+## ns-grep.sh
 ```
 $ cat ns.txt
 default
@@ -35,6 +36,7 @@ my-namespace
 $ bash ns-grep.sh -f ns.txt -- kubectl get pod -n {}
 ```
 
+## ns-scale.sh
 ```
 $ bash ns-scale.sh dump default deploy
 ==================== .minikube/default_deploy.txt ====================
