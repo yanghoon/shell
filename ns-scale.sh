@@ -18,9 +18,13 @@ usage () {
   echo '    diff    diff replicas between cluster adn dump file'
 }
 assert () {
+  if [ $# -eq 0 ]; then
+    usage && exit 1
+  fi
+
   until [ -z "$1" ]; do
-    if [ "$1" == '' ]; then
-      Usage && exit 1
+    if [ -z "$1" ]; then
+      usage && exit 1
     else
       shift
     fi
@@ -63,6 +67,10 @@ case $command in
   set)
     assert $replicas
     names=$(kubectl get $kind -n $namespace | tail -n +2 | cut -f1 -d' ')
+
+    if [ -z "$names" ]; then
+      exit 0
+    fi
 
     echo "$names" | while read name;
     do
