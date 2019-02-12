@@ -1,0 +1,28 @@
+
+# for kube v1.10
+# - Guide     : https://v1-10.docs.kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/
+# - Guide(ko) : https://kubernetes.io/ko/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/
+# - Spec      : https://github.com/kubernetes/community/blob/master/contributors/design-proposals/autoscaling/hpa-v2.md#specification
+apiVersion: autoscaling/v2beta1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: my-app-hpa
+spec:
+  minReplicas: 1
+  maxReplicas: 3
+  metrics:
+    # Resource : pod.spec..{requests | limits}.{cpu | memory}
+    # Pods     :
+    # Objects  :
+  - type: Resource
+    resource:
+      name: memory
+      targetAverageUtilization: 70
+  - type: Resource
+    resource:
+      name: cpu
+      targetAverageUtilization: 70
+  scaleTargetRef:
+    apiVersion: extensions/v1beta1
+    kind: Deployment
+    name: my-app
