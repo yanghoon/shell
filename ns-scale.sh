@@ -59,7 +59,7 @@ case $command in
     tail -n +3 $dump_file | while read line;
     do
       name=$(echo $line | cut -f1 -d' ')
-      replicas=$(echo $line | cut -f2 -d' ')
+      replicas=$(echo $line | cut -f2 -d' ' | cut -f2 -d '/')
       kubectl scale $kind -n $namespace --replicas $replicas $name
     done
     ;;
